@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "roguerunner",
+  "version": "1.0.0",
+  "description": "javascript game",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukascristofaro/RogueRunner.git"
+  },
+  "author": "lukascristofaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukascristofaro/RogueRunner/issues"
+  },
+  "homepage": "https://github.com/lukascristofaro/RogueRunner#readme"
+}
