@@ -1,14 +1,14 @@
 FROM node:14
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src
 
-COPY package*.json ./
+COPY src/package*.json ./
 
 RUN npm install
 
 RUN npm install express
 
-COPY . .
+RUN npm install -g nodemon
 
 EXPOSE 8080
 
