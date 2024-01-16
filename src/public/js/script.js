@@ -2,6 +2,7 @@ const config = {
     width: window.innerWidth,
     height: window.innerHeight,
     type: Phaser.AUTO,
+    antialias: false,
     scene: {
         preload : preload,
         create : create,
@@ -27,6 +28,8 @@ function create() {
         frameRate : 2,
         repeat: -1,
     })
+    sprite.scaleX = 2;
+    sprite.scaleY = 2;
     sprite.play('policeCar');
 }
 

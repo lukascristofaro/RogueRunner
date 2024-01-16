@@ -12,9 +12,11 @@ app.get('/', (req, res) => {
     res.send('Bonjour, ceci est votre premier serveur web avec Node.js!');
 });
 
-app.get('/admin', (req, res) => {
-    res.sendFile(path + 'home.html');
+app.get('/game', (req, res) => {
+    res.sendFile(path + 'index.html');
 });
+
+app.use(express.static('public'));
 
 
 app.listen(port, () => {
