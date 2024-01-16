@@ -21,6 +21,7 @@ services:
   db:
     image: mysql:latest
     restart: always
+    platform: linux/x86_64
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: mydatabase
