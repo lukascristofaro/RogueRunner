@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     res.send('Bonjour, ceci est votre premier serveur web avec Node.js!');
 });
 
-app.get('/admin', (req, res) => {
+app.get('/home', (req, res) => {
     res.sendFile(path + 'home.html');
 });
 
