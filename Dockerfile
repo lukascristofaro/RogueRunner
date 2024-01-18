@@ -10,6 +10,8 @@ RUN npm install express
 
 RUN npm install -g nodemon
 
+RUN npm install mysql
+
 EXPOSE 8080
 
 CMD ["npm", "start"]

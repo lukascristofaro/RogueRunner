@@ -1,5 +1,10 @@
 const express = require('express');
 
+import { initDB } from '../../app/models/initDB.js';
+
+initDB();
+
+
 
 const app = express();
 const port = 8080;
