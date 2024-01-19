@@ -1,29 +1,32 @@
-const express = require('express');
+import express from "express";
+import { join } from "path";
+import { fileURLToPath } from "url";
 
-import { initDB } from '../../app/models/initDB.js';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = join(__filename, "../");
 
-initDB();
-
-
+const pathToViews = join(__dirname, "app/views");
 
 const app = express();
 const port = 8080;
 
 const router = express.Router();
 
-const path = __dirname + '/app/views/'
-
-app.get('/', (req, res) => {
-    res.send('Bonjour, ceci est votre premier serveur web avec Node.js!');
+app.get("/", (req, res) => {
+  res.send("Bonjour, ceci est votre premier serveur web avec Node.js!");
 });
 
-app.get('/game', (req, res) => {
-    res.sendFile(path + 'index.html');
+app.get("/game", (req, res) => {
+  res.sendFile(join(pathToViews, "index.html"));
+});
+app.get("/home", (req, res) => {
+  res.sendFile(join(pathToViews, "index.html"));
 });
 
-app.use(express.static('public'));
-
+app.use(express.static("public"));
 
 app.listen(port, () => {
-    console.log(`Le serveur est en cours d'exécution sur http://localhost:${port}`);
+  console.log(
+    `Le serveur est en cours d'exécution sur http://localhost:${port}`
+  );
 });
