@@ -10,7 +10,7 @@ RUN npm install express
 
 RUN npm install -g nodemon
 
-RUN npm install mysql
+RUN npm install mysql2
 
 EXPOSE 8080
 
