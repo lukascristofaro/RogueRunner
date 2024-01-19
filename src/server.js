@@ -20,7 +20,20 @@ app.get("/game", (req, res) => {
   res.sendFile(join(pathToViews, "index.html"));
 });
 app.get("/home", (req, res) => {
-  res.sendFile(join(pathToViews, "index.html"));
+  res.sendFile(join(pathToViews, "home.html"));
+});
+
+app.get("/login", (req, res) => {
+  res.sendFile(join(pathToViews, "login.html"));
+});
+app.get("/signin", (req, res) => {
+  res.sendFile(join(pathToViews, "signin.html"));
+});
+app.get("/shop", (req, res) => {
+  res.sendFile(join(pathToViews, "shop.html"));
+});
+app.get("/inventory", (req, res) => {
+  res.sendFile(join(pathToViews, "inventory.html"));
 });
 
 app.use(express.static("public"));
