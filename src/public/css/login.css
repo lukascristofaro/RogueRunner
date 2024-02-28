@@ -11,17 +11,21 @@ body {
   width: 400px;
   margin: 2%;
 }
+.container .form {
+  height: 400px;
+  width: 400px;
+}
+.container h2 {
+  font-size: 1.4em;
+  text-align: center;
+  color: black;
+}
 
 .form {
-  width: 400px;
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-}
-
-h2 {
-  text-align: center;
-  color: black;
+  width: 400px;
 }
 
 label {
@@ -38,7 +42,6 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 .button {
   width: 100%;
   font-size: 20px;
@@ -46,4 +49,8 @@ input {
 
 hr {
   width: 40%;
+}
+
+a:hover {
+  color: #f1c40f !important;
 }
