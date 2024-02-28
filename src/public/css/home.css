@@ -62,11 +62,8 @@ img {
   margin: 0 auto;
 }
 .buttonNav {
-  font-weight: bold;
-  font-size: larger;
-  width: 300px;
-  font-weight: 200;
-  font-size: 30px;
+  width: 500px;
+  font-size: 40px;
   background: linear-gradient(90deg, #f9e20a 0%, #ff943f 100%);
   padding: 10px 30px;
   color: black;
@@ -79,6 +76,9 @@ img {
   justify-content: center;
   cursor: pointer;
   text-transform: uppercase;
+}
+.buttonNav h2 {
+  font-weight: bold;
 }
 .buttonNav:hover {
   transition: 0.7s;

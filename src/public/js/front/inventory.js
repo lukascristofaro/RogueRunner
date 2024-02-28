@@ -27,15 +27,15 @@ function displayProducts() {
     description.id = "description";
     description.textContent = `Description: ${product.description}`;
 
-    const buyButton = document.createElement("button");
-    buyButton.id = "buy";
-    buyButton.textContent = "Buy";
-    buyButton.addEventListener("click", () => {
-      alert(`You bought ${product.title} for $${product.price.toFixed(2)}`);
+    const useButton = document.createElement("button");
+    useButton.id = "use";
+    useButton.textContent = "use";
+    useButton.addEventListener("click", () => {
+      alert(`You use ${product.title}`);
     });
     box.appendChild(title);
     box.appendChild(description);
-    box.appendChild(buyButton);
+    box.appendChild(useButton);
     container.appendChild(box);
   });
 }
