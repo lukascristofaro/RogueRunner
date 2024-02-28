@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/game", (req, res) => {
-  res.sendFile(join(pathToViews, "index.html"));
+  res.sendFile(join(pathToViews, "game.html"));
 });
 
 app.get("/home", (req, res) => {
