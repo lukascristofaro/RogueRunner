@@ -1,58 +1,100 @@
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #3A3A3A;
-    font-family: sans-serif;
-    font-size: larger;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3a3a3a;
+  font-family: sans-serif;
+  font-size: larger;
 }
-
+audio {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+}
 .login {
-    display: flex;
-    width: 100%;
-    margin-left: auto;
+  display: flex;
+  width: 100%;
+  margin-left: auto;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: myAnim 2s ease 0s 1 normal forwards;
 }
 
 header img {
-    width: 600px;
-    height: auto;
+  width: 600px;
+  height: auto;
 }
 
 nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    margin-top: 100px;
-    font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 100px;
+  font-weight: bold;
 }
 
 a {
-    margin: 20px;
-    text-decoration: none;
-    color: white;
+  margin: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 #login-link {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.buttonNav {
+  font-family: Roboto, sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+  background: linear-gradient(90deg, #f9e20a 0%, #ff943f 100%);
+  padding: 10px 30px;
+  color: black;
+
+  border: solid #000000 2px;
+  box-shadow: none;
+  border-radius: 50px;
+  transition: 1000ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.buttonNav:hover {
+  transition: 0.7s;
+  padding: 10px 50px;
+  transform: translateY(-0px);
+  background: linear-gradient(90deg, #f9e20a 0%, #ff943f 100%);
+  color: #fff;
+  border: solid 2px #000000;
+}
+
+@keyframes myAnim {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

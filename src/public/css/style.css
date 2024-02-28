@@ -11,3 +11,17 @@ body {
   line-height: 1.5;
   color: black;
 }
+
+.coloumn {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.gradient {
+  background: linear-gradient(90deg, #f9e20a 0%, #ff943f 100%);
+}

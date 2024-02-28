@@ -28,8 +28,8 @@ app.get("/login", (req, res) => {
   res.sendFile(join(pathToViews, "login.html"));
 });
 
-app.get("/signin", (req, res) => {
-  res.sendFile(join(pathToViews, "signin.html"));
+app.get("/register", (req, res) => {
+  res.sendFile(join(pathToViews, "register.html"));
 });
 
 app.get("/shop", (req, res) => {
