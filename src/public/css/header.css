@@ -2,21 +2,8 @@ header {
   width: 100%;
   display: flex;
   color: #ffffff;
-  
+  justify-content: space-between;
 }
-header .logo {
-  margin: 0 auto;
-  display: block;
-  margin-top: 20px;
-}
-header .cash {
-  margin: 0 auto;
-  display: block;
-  margin-top: 20px;
-}
-header .profile {
-  margin: 0 auto;
-  display: block;
-  margin-top: 20px;
-  text-decoration: none;
+header.logo {
+  margin: 20px;
 }
