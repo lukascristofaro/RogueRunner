@@ -39,6 +39,9 @@ app.get("/shop", (req, res) => {
 app.get("/inventory", (req, res) => {
   res.sendFile(join(pathToViews, "inventory.html"));
 });
+app.get("/profile", (req, res) => {
+  res.sendFile(join(pathToViews, "profile.html"));
+});
 
 app.use(express.static("public"));
 
