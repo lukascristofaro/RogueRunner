@@ -64,3 +64,6 @@ h1 {
 #use:hover {
   background: linear-gradient(to right, #d9c40a, #e56f26);
 }
+.button {
+  font-size: 20px;
+}

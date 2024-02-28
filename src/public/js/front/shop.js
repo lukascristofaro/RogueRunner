@@ -1,63 +1,42 @@
-const products = {
-  policecar: [
-    {
-      title: "Police Car 1",
-      price: 9.99,
-    },
-    {
-      title: "Police Car 2",
-      price: 9.99,
-    },
-    {
-      title: "Police Car 3",
-      price: 9.99,
-    },
-  ],
-  roguecar: [
-    {
-      title: "Rogue Car 1",
-      price: 12.99,
-    },
-    {
-      title: "Rogue Car 2",
-      price: 12.99,
-    },
-    {
-      title: "Rogue Car 3",
-      price: 12.99,
-    },
-  ],
-};
-
-function displayProducts(category) {
-  const container = document.querySelector(`.${category}`);
+const products = [
+  {
+    title: "Product 1",
+    description: "Description for Product 1",
+  },
+  {
+    title: "Product 2",
+    description: "Description for Product 2",
+  },
+  {
+    title: "Product 3",
+    description: "Description for Product 3",
+  },
+];
+function displayProducts() {
+  const container = document.querySelector(".container");
   container.innerHTML = "";
-
-  products[category].forEach((product) => {
+  products.forEach((product) => {
     const box = document.createElement("div");
     box.className = "box";
 
     const title = document.createElement("h1");
     title.id = "Title";
-    title.textContent = `${product.title}`;
+    title.textContent = `Title: ${product.title}`;
 
-    const price = document.createElement("p");
-    price.id = "price";
-    price.textContent = `${product.price.toFixed(2)} $`;
+    const description = document.createElement("p");
+    description.id = "description";
+    description.textContent = `Description: ${product.description}`;
 
     const buyButton = document.createElement("button");
     buyButton.id = "buy";
-    buyButton.textContent = "Buy";
+    buyButton.textContent = "buy";
     buyButton.addEventListener("click", () => {
-      alert(`You bought ${product.title} for $${product.price.toFixed(2)}`);
+      alert(`You bought ${product.title}`);
     });
-
     box.appendChild(title);
-    box.appendChild(price);
+    box.appendChild(description);
     box.appendChild(buyButton);
-
     container.appendChild(box);
   });
 }
-displayProducts("policecar");
-displayProducts("roguecar");
+displayProducts();
