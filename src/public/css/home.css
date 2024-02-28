@@ -62,21 +62,21 @@ img {
   margin: 0 auto;
 }
 .buttonNav {
-  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  width: 300px;
   font-weight: 200;
   font-size: 30px;
   background: linear-gradient(90deg, #f9e20a 0%, #ff943f 100%);
   padding: 10px 30px;
   color: black;
-
   border: solid #000000 2px;
   box-shadow: none;
   border-radius: 50px;
-  transition: 1000ms;
-  transform: translateY(0);
+  transition: 1s;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   text-transform: uppercase;
 }
@@ -86,7 +86,7 @@ img {
   transform: translateY(-0px);
   background: linear-gradient(90deg, #f9e20a 0%, #ff943f 100%);
   color: #fff;
-  border: solid 2px #000000;
+  border: solid 2px #ffffff;
 }
 
 @keyframes myAnim {
