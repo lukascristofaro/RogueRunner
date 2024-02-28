@@ -28,22 +28,26 @@ function preload() {
 }
 
 function create() {
-    player = createPoliceCar(this, 100, 100);
     createMap(this, map1);
+    player = createPoliceCar(this, 100, 100);
 }
 
 function update() {
     var cursors = this.input.keyboard.createCursorKeys();
 
     if (cursors.left.isDown) {
-        player.x -= 5;
+        player.x -= 2;
+        player.setAngle(90);
     } else if (cursors.right.isDown) {
-        player.x += 5;
+        player.x += 2;
+        player.setAngle(270);
     }
 
     if (cursors.up.isDown) {
-        player.y -= 5;
+        player.y -= 2;
+        player.setAngle(180);
     } else if (cursors.down.isDown) {
-        player.y += 5;
+        player.y += 2;
+        player.setAngle(360);
     }
 }
