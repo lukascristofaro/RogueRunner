@@ -14,4 +14,4 @@ RUN npm install mysql2
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["sh", "-c", "npm start"]
