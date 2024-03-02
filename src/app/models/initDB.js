@@ -1,5 +1,6 @@
 import { connection } from './getConnection.js';
 
+
 export function initDB() {
     console.log("initDB");
     connection.connect(function(err) {
@@ -56,3 +57,4 @@ export function initDB() {
     });
 }
 
+initDB();

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="icon" href="/assets/icon.png" />
+  </head>
+  <header>
+    <a href="/home"><img src="/assets/logo.png" class="logo" alt="logo" /></a>
+  </header>
+  <body class="coloumn">
+    <div class="container">
+      <form class="form" id="registerForm" action="/adduser" method="post">
+        <h2>Register</h2>
+        <label for="username">Username :</label>
+        <input type="text" id="username" name="username" required />
+        <label for="username">Email :</label>
+        <input type="text" id="email" name="email" required />
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit" class="gradient button">Register</button>
+      </form>
+    </div>
+    <hr />
+    <div class="container form coloumn">
+      <h2>Do you have an account ?</h2>
+      <a href="/login"><button class="button">Login</button></a>
+    </div>
+  </body>
+</html>
