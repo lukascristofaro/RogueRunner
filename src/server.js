@@ -2,7 +2,7 @@ import express from "express";
 import { join } from "path";
 import { fileURLToPath } from "url";
 import { addUser } from './app/models/injection.js';
-import { readdir } from "fs";
+import { getAllUsers } from './app/models/queries.js';
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +39,7 @@ app.get("/register", (req, res) => {
 
 app.post('/adduser', async (req, res) => {
   const { email, username, password } = req.body;
+  
   try {
       await addUser(email, username, password, 0, 0, 0, 0);
       res.redirect('/login');
@@ -48,8 +49,7 @@ app.post('/adduser', async (req, res) => {
 });
 
 app.get("/user", (req, res) => {
-  console.log(getAllUsers());
-  res.send("user");
+  res.send(getAllUsers());
 });
 
 app.use(express.static("public"));

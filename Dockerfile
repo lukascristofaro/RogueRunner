@@ -12,6 +12,8 @@ RUN npm install -g nodemon
 
 RUN npm install mysql2
 
+RUN npm install bcrypt
+
 EXPOSE 8080
 
 CMD ["sh", "-c", "npm start"]

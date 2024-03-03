@@ -6,7 +6,7 @@ export function initDB() {
     connection.connect(function(err) {
         if (err) throw err;
         console.log("Connected!");
-        var sql = "CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255), username VARCHAR(255), password VARCHAR(255), nbGames INT, nbWins INT, money INT, experience FLOAT)";
+        var sql = "CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255), username VARCHAR(255) UNIQUE, password VARCHAR(255), nbGames INT, nbWins INT, money INT, experience FLOAT)";
         connection.query(sql, function (err, result) {
             if (err) throw err;
             console.log("Table users created");
