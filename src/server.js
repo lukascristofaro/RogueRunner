@@ -3,6 +3,9 @@ import { join } from "path";
 import { fileURLToPath } from "url";
 import { addUser } from './app/models/injection.js';
 import { getAllUsers } from './app/models/queries.js';
+import { login } from "./app/controller/login.js";
+import session from 'express-session';
+
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,6 +20,13 @@ const router = express.Router();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(session({
+  secret: 'uEdQkBWobxCIG25c3K6m9AHmfmEvhRuXF8ZhlaFK2c4wzuJPDzout7yQifXPEDzk',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // Note: in production, set secure to true and use HTTPS
+}));
 
 app.get("/", (req, res) => {
   res.send("Bonjour, ceci est votre premier serveur web avec Node.js!");
@@ -48,8 +58,18 @@ app.post('/adduser', async (req, res) => {
   }
 });
 
-app.get("/user", (req, res) => {
-  res.send(getAllUsers());
+app.post('/login', (req, res) => {
+  login(req, res);
+});
+  
+
+app.get('/user', async (req, res) => {
+  try {
+      const users = await getAllUsers();
+      res.json(users);
+  } catch (err) {
+      res.status(500).json({ message: err.message });
+  }
 });
 
 app.use(express.static("public"));
