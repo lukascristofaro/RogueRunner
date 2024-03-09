@@ -53,6 +53,24 @@ export function initDB() {
             console.log("Table Image created");
 
         });
+
+        var sql = "SELECT COUNT(*) AS count FROM Items";
+        connection.query(sql, function (err, result) {
+            if (err) throw err;
+            if (result[0].count === 0) {
+                var sql = "INSERT INTO Items (name, price, type) VALUES ('Uncommon Thief car', 100, 1)";
+                connection.query(sql, function (err, result) {
+                    if (err) throw err;
+                    console.log("Uncommon Thief car created");
+                });
+                var sql = "INSERT INTO Items (name, price, type) VALUES ('Uncommon Police car', 100, 2)";
+                connection.query(sql, function (err, result) {
+                    if (err) throw err;
+                    console.log("Uncommon Police car created");
+                });
+            }
+        });
+
         connection.end();
     });
 }
