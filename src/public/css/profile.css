@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    margin-bottom: 10vh;
+  }
+  .container h2 {
+    color: white;
+  }
+  
+  .box {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+  }
+  .box a {
+    text-decoration: none;
+  }
+  
+  .button {
+    font-size: 20px;
+  }

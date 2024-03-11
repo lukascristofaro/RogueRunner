@@ -14,6 +14,8 @@ RUN npm install bcrypt
 
 RUN npm install express-session
 
+RUN npm install express-handlebars
+
 EXPOSE 8080
 
 CMD ["sh", "-c", "npm start"]

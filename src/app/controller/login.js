@@ -4,8 +4,7 @@ import bcrypt from 'bcrypt';
 export async function login(req, res) {
     const { email, password } = req.body;
     let user = await getUserByEmail(email);
-    console.log(user.email)
-    
+        
     if (user && user.password) {
         try {       
             const match = await bcrypt.compare(password, user.password);

@@ -1,4 +1,7 @@
 import express from "express";
+import engine from 'express-handlebars';
+import exphbs from 'express-handlebars';
+
 import { join } from "path";
 import { fileURLToPath } from "url";
 import { addUser } from './app/models/injection.js';
@@ -17,7 +20,12 @@ const pathToViews = join(__dirname, "app/views");
 const app = express();
 const port = 8080;
 
+
 const router = express.Router();
+
+app.engine('handlebars', exphbs.engine({ defaultLayout: '' }));
+app.set('view engine', 'handlebars');
+app.set('views', './app/views');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -68,10 +76,11 @@ app.get('/logout', (req, res) => {
 });
 
 app.get("/profile", async (req, res) => {
-  if (req.session.user) {
-    res.send(req.session.user.username);
-  } else {
-    res.redirect('/login');
+  try {
+    res.render("profile", { user: req.session.user });
+
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
 
