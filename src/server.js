@@ -69,7 +69,7 @@ app.get("/profile", async (req, res) => {
     res.redirect('/login');
   }
 });
-  
+
 
 app.get('/user', async (req, res) => {
   try {
