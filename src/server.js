@@ -61,6 +61,14 @@ app.post('/adduser', async (req, res) => {
 app.post('/login', (req, res) => {
   login(req, res);
 });
+
+app.get("/profile", async (req, res) => {
+  if (req.session.user) {
+    res.send(req.session.user.username);
+  } else {
+    res.redirect('/login');
+  }
+});
   
 
 app.get('/user', async (req, res) => {

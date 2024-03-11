@@ -33,7 +33,7 @@ export function getUserByEmail(email) {
             console.log("Connected!");
             connection.query(`SELECT * FROM users WHERE email = '${email}'`, function (err, result, fields) {
                 if (err) reject(err);
-                resolve(result);
+                resolve(result[0]);
             });
         });
     });
