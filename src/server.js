@@ -5,6 +5,7 @@ import { addUser } from './app/models/injection.js';
 import { getAllUsers } from './app/models/queries.js';
 import { login } from "./app/controller/login.js";
 import session from 'express-session';
+import { logout } from "./app/controller/logout.js";
 
 
 
@@ -60,6 +61,10 @@ app.post('/adduser', async (req, res) => {
 
 app.post('/login', (req, res) => {
   login(req, res);
+});
+
+app.get('/logout', (req, res) => {
+  logout(req, res);
 });
 
 app.get("/profile", async (req, res) => {
