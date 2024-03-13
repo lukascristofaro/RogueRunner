@@ -1,21 +1,11 @@
 FROM node:14
 
-WORKDIR /usr/src
+WORKDIR /usr/app
 
-COPY src/package*.json ./
+COPY /src/package.json .
 
-RUN npm install express
+RUN npm install --quiet
 
-RUN npm install -g nodemon
+COPY ./src .
 
-RUN npm install mysql2
-
-RUN npm install bcrypt
-
-RUN npm install express-session
-
-RUN npm install express-handlebars
-
-EXPOSE 8080
-
-CMD ["sh", "-c", "npm start"]
+ENTRYPOINT ["npm", "start"]
