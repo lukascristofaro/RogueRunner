@@ -1,5 +1,5 @@
 export function createMap(scene, mapData) {
-    const TILE_SIZE = 120; // Remplacez par la taille réelle de vos tuiles
+    const TILE_SIZE = 50; // Remplacez par la taille réelle de vos tuiles
 
     for (let i = 0; i < mapData.length; i++) {
         for (let j = 0; j < mapData[i].length; j++) {

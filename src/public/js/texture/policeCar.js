@@ -9,8 +9,8 @@ export function createPoliceCar(scene, x, y) {
         frameRate: 2,
         repeat: -1,
     });
-    sprite.scaleX = 2;
-    sprite.scaleY = 2;
+    sprite.scaleX = 1;
+    sprite.scaleY = 1;
     sprite.play('policeCar');
 
     return sprite;
