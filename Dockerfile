@@ -4,14 +4,18 @@ WORKDIR /usr/src
 
 COPY src/package*.json ./
 
-RUN npm install
-
 RUN npm install express
 
 RUN npm install -g nodemon
 
-RUN npm install mysql
+RUN npm install mysql2
+
+RUN npm install bcrypt
+
+RUN npm install express-session
+
+RUN npm install express-handlebars
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["sh", "-c", "npm start"]
