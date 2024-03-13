@@ -4,13 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rogue Runner</title>
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="/assets/icon.png" />
   </head>
   <body>
-    <img src="../../public/assets/logo.png" alt="">
-    <h1>Welcome to Rogue Runner</h1>
-    <a href="/profile">Profile</a>
-    <a href="/play">Play</a>
-    <a href="/shop">Shop</a>
-    <a href="/inventory">Inventory</a>
+    <div class="login">
+      <a id="login-link" href="/login">Login</a>
+    </div>
+    <header>
+      <img src="/assets/logo.png" alt="logo" class="logo" />
+    </header>
+
+    <nav>
+      <a href="/play"><button class="button">play</button></a>
+      <a href="/profile"><button class="button">Profile</button></a>
+      <a href="/shop"><button class="button">Shop</button></a>
+      <a href="/inventory"><button class="button">Inventory</button></a>
+    </nav>
   </body>
+  <audiof autoplay controls loop>
+    <source src="assets/gamesound.mp3" type="audio/mpeg" />
+  </audio>
 </html>

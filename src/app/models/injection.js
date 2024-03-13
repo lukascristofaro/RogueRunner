@@ -13,3 +13,16 @@ export async function addUser(email, username, password, nbGames, nbWins, money,
         });
     })
 }
+
+export async function delUser(id) {
+    connection.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+        var sql = "DELETE FROM users WHERE id = " + id;
+        connection.query(sql, function (err, result) {
+            if (err) throw err;
+            console.log("user deleted with success");
+        });
+    }
+    )
+}

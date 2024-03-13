@@ -1,14 +1,15 @@
 import express from "express";
-import engine from 'express-handlebars';
 import exphbs from 'express-handlebars';
 
 import { join } from "path";
 import { fileURLToPath } from "url";
 import { addUser } from './app/models/injection.js';
 import { getAllUsers } from './app/models/queries.js';
+import { getUserById } from './app/models/queries.js';
 import { login } from "./app/controller/login.js";
 import session from 'express-session';
 import { logout } from "./app/controller/logout.js";
+import { delUser } from './app/models/injection.js'
 
 
 
@@ -77,7 +78,11 @@ app.get('/logout', (req, res) => {
 
 app.get("/profile", async (req, res) => {
   try {
-    res.render("profile", { user: req.session.user });
+    if (req.session.user) {
+      res.render("profile", { user: req.session.user });
+    } else {
+      res.redirect("/login");
+    }
 
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -94,7 +99,23 @@ app.get('/user', async (req, res) => {
   }
 });
 
+
+app.post('/deleteprofile', async (req, res) => {
+  try {
+    if (req.session && req.session.user) {
+      await delUser(req.session.user.id);
+      req.session.destroy();
+      res.json({ message: 'User deleted' });
+    } else {
+      res.status(401).json({ message: 'Not logged in' });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 app.use(express.static("public"));
+
 
 app.listen(port, () => {
   console.log(
