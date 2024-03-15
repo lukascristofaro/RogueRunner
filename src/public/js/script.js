@@ -36,7 +36,7 @@ function preload() {
 
 function create() {
     const { wallLayer } = createMap(this, map1);
-    player = createPoliceCar(this, 80, 80);
+    player = createPoliceCar(this, 600, 400);
     this.physics.add.collider(player, wallLayer);
 }
 

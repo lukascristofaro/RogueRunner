@@ -1,12 +1,17 @@
 export function createMap(scene, mapData) {
     const TILE_SIZE = 50;
     const wallLayer = scene.physics.add.group({ immovable: true });
+    const mapWidth = mapData[0].length * TILE_SIZE;
+    const mapHeight = mapData.length * TILE_SIZE;
+
+    const offsetX = (scene.cameras.main.width - mapWidth) / 2;
+    const offsetY = (scene.cameras.main.height - mapHeight) / 2;
 
     for (let i = 0; i < mapData.length; i++) {
         for (let j = 0; j < mapData[i].length; j++) {
             let tile = mapData[i][j];
-            let posX = j * TILE_SIZE;
-            let posY = i * TILE_SIZE;
+            let posX = j * TILE_SIZE + offsetX;
+            let posY = i * TILE_SIZE + offsetY;
 
             if (tile === 1) {
                 let wall = scene.physics.add.image(posX + TILE_SIZE / 2, posY + TILE_SIZE / 2, 'wall').setOrigin(0.5, 0.5);
