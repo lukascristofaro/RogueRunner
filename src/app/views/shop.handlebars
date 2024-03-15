@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/shop.css" />
+    <link rel="icon" href="/assets/icon.png" />
+  </head>
+  <body>
+      {{> header}}
+    <div class="container">
+      <div class="policecar">
+        {{% for policecar in policecars %}}
+        <div class="car">
+          <img src="/assets/policecar.png" alt="policecar" />
+          <h2>{{policecar.name}}</h2>
+          <h2>{{policecar.price}}$</h2>
+          <form action="/buy" method="post">
+            <input type="hidden" name="car" value="{{policecar.name}}" />
+            <button class="button gradient button">Buy</button>
+          </form>
+        {{% endfor %}}</div>
+      <div class="roguecar">
+        {{% for roguecar in roguecars %}}
+        <div class="car">
+          <img src="/assets/roguecar.png" alt="roguecar" />
+          <h2>{{roguecar.name}}</h2>
+          <h2>{{roguecar.price}}$</h2>
+          <form action="/buy" method="post">
+            <input type="hidden" name="car" value="{{roguecar.name}}" />
+            <button class="button gradient button">Buy</button>
+          </form>
+        {{% endfor %}}</div>
+      </div>
+    </div>
+  </body>
+</html>

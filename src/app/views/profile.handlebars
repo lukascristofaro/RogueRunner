@@ -10,12 +10,7 @@
     <link rel="icon" href="/assets/icon.png" />
   </head>
   <body>
-    <header>
-      <a href="/home"><img src="/assets/logo.png" class="logo" alt="logo" /></a>
-      <div class="right">
-        <h2 class="cash">{{user.money}} $</h2>
-      </div>
-    </header>
+    {{> header}}
     <div class="container">
       <h2>Email : {{user.email}}</h2>
       <h2>Username : {{user.username}}</h2>
@@ -24,9 +19,18 @@
     </div>
     <div class="box">
       <a href="/logout"><button class="button">Logout</button></a>
-      <form action="/deleteprofile" method="post">
-        <button class="button">Delete Account</button>
-      </form>
+      <button id="deleteAccountBtn" class="button">Delete Account</button>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span id="closeModalBtn" class="close">&times;</span>
+          <p>Please enter your password to confirm account deletion:</p>
+          <form id="deleteProfileForm" action="/deleteprofile" method="post">
+            <input type="password" name="password" required />
+            <button type="submit" class="button">Confirm</button>
+          </form>
+        </div>
+      </div>
     </div>
+    <script src="/menu/profile.js"></script>
   </body>
 </html>

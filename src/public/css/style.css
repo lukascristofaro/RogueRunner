@@ -54,7 +54,6 @@ body {
   }
   .button:hover {
     transition: 0.4s;
-    padding: 10px 50px;
     transform: translateY(-0px);
     background: linear-gradient(90deg, #f9e20a 0%, #ff943f 100%);
     color: white;

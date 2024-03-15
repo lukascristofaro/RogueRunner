@@ -1,0 +1,16 @@
+<header>
+  <a href="/home"><img src="/assets/logo.png" class="logo" alt="logo" /></a>
+  <div class="right">
+    <h2 class="cash">{{user.money}} $</h2>
+  </div>
+  {{#if user.username}}
+  <a href="/profile">{{user.username}}</a>
+  {{else}}
+  <a href="/login">Connexion</a>
+  {{/if}} {{#if profile}}
+  <a href="/inventory"><button class="button">Inventory</button></a>
+  {{/if}}
+</header>
+
+<link rel="stylesheet" href="/css/header.css" />
+<link rel="stylesheet" href="/css/style.css" />

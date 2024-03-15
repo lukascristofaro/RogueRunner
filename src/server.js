@@ -10,6 +10,7 @@ import { login } from "./app/controller/login.js";
 import session from 'express-session';
 import { logout } from "./app/controller/logout.js";
 import { delUser } from './app/models/injection.js'
+import bcrypt from 'bcrypt';
 
 
 
@@ -25,6 +26,7 @@ const port = 8080;
 const router = express.Router();
 
 app.engine('handlebars', exphbs.engine({ defaultLayout: '' }));
+
 app.set('view engine', 'handlebars');
 app.set('views', './app/views');
 
@@ -103,15 +105,23 @@ app.get('/user', async (req, res) => {
 app.post('/deleteprofile', async (req, res) => {
   try {
     if (req.session && req.session.user) {
-      await delUser(req.session.user.id);
-      req.session.destroy();
+      if (await bcrypt.compare(req.body.password, req.session.user.password)) {
+        await delUser(req.session.user.id);
+        req.session.destroy();
       res.json({ message: 'User deleted' });
+      } else {
+        res.status(401).json({ message: 'Wrong password' });
+      }
     } else {
       res.status(401).json({ message: 'Not logged in' });
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
+});
+
+app.get("/inventory", async (req, res) => {
+  res.render("inventory", { user: req.session.user });
 });
 
 app.use(express.static("public"));

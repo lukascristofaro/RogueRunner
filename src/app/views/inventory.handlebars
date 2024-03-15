@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/shop.css" />
+    <link rel="icon" href="/assets/icon.png" />
+  </head>
+  <body>
+      {{ header}}
+    <div class="container">
+      <div class="policecar">
+        {{#each policecars}}
+          <div class="car">
+            <img src="/assets/policecar.png" alt="policecar" />
+            <h2>{{this.name}}</h2>
+            <h2>{{this.price}}$</h2>
+            <form action="/sell" method="post">
+              <input type="hidden" name="car" value="{{this.name}}" />
+              <button class="button gradient button">Sell</button>
+            </form>
+          </div>
+        {{/each}}
+      </div>
+      <div class="roguecar">
+        {{#each roguecars}}
+          <div class="car">
+            <img src="/assets/roguecar.png" alt="roguecar" />
+            <h2>{{this.name}}</h2>
+            <h2>{{this.price}}$</h2>
+            <form action="/sell" method="post">
+              <input type="hidden" name="car" value="{{this.name}}" />
+              <button class="button gradient button">Sell</button>
+            </form>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </body>
+</html>
