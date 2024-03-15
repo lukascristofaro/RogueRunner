@@ -1,6 +1,6 @@
 import { createPoliceCar } from './texture/policeCar.js';
-import {createMap} from './texture/map.js';
-import {map1} from './map/map1.js';
+import { createMap } from './texture/map.js';
+import { map1 } from './map/map1.js';
 
 let player;
 
@@ -10,9 +10,16 @@ const config = {
     type: Phaser.AUTO,
     antialias: false,
     scene: {
-        preload : preload,
-        create : create,
+        preload: preload,
+        create: create,
         update: update
+    },
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 0 },
+            debug: false,
+        }
     }
 }
 
@@ -24,30 +31,33 @@ function preload() {
 
     this.load.image('roadX', 'assets/roadX.png');
     this.load.image('roadY', 'assets/roadY.png');
-
+    this.load.image('wall', 'assets/wall.png');
 }
 
 function create() {
-    createMap(this, map1);
-    player = createPoliceCar(this, 100, 100);
+    const { wallLayer } = createMap(this, map1);
+    player = createPoliceCar(this, 80, 80);
+    this.physics.add.collider(player, wallLayer);
 }
 
 function update() {
-    var cursors = this.input.keyboard.createCursorKeys();
-
+    const speed = 300;
+  
+    const cursors = this.input.keyboard.createCursorKeys();
+    
     if (cursors.left.isDown) {
-        player.x -= 2;
-        player.setAngle(90);
+      player.setVelocityX(-speed);
+      player.setAngle(90);
     } else if (cursors.right.isDown) {
-        player.x += 2;
+      player.setVelocityX(speed);
         player.setAngle(270);
     }
-
+  
     if (cursors.up.isDown) {
-        player.y -= 2;
-        player.setAngle(180);
+      player.setVelocityY(-speed);
+      player.setAngle(180);
     } else if (cursors.down.isDown) {
-        player.y += 2;
-        player.setAngle(360);
+      player.setVelocityY(speed);
+      player.setAngle(0);
     }
 }

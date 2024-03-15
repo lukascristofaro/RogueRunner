@@ -1,5 +1,5 @@
 export function createPoliceCar(scene, x, y) {
-    var sprite = scene.add.sprite(x, y, 'policeCar1');
+    var sprite = scene.physics.add.sprite(x, y, 'policeCar1');
     scene.anims.create({
         key: 'policeCar',
         frames: [
