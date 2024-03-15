@@ -45,6 +45,8 @@ function update() {
   
     const cursors = this.input.keyboard.createCursorKeys();
     
+    player.setVelocity(0);
+
     if (cursors.left.isDown) {
       player.setVelocityX(-speed);
       player.setAngle(90);
